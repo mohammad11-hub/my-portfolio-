@@ -75,7 +75,7 @@ const Contact = () => {
         <div className="text-center mt-12">
           <Button
             size="lg"
-            onClick={() => window.open("mailto:mmdsunasara@gmail.com", "_blank")}
+            onClick={() => window.open("mailto:mrmdsunasara@gmail.com", "_blank")}
             className="bg-primary hover:bg-primary-glow text-primary-foreground shadow-lg hover:shadow-xl transition-all"
           >
             <Mail className="mr-2 h-5 w-5" />
