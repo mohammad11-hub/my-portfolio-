@@ -15,14 +15,14 @@ const Projects = () => {
       title: "Simon Says Game",
       description: "A memory game that challenges players to remember and repeat increasingly complex patterns.",
       image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop&q=60",
-      github: "https://github.com/mohammad11-hub/simon-says-game.git",
+      github: "https://simon-says-game-one-gold.vercel.app/",
       tags: ["JavaScript", "Game Logic", "DOM"],
     },
     {
       title: "Todo Application",
       description: "A practical task management app with features to add, edit, and delete tasks efficiently.",
       image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&auto=format&fit=crop&q=60",
-      github: "https://github.com/mohammad11-hub/todoapp.git",
+      github: "https://todoapp-nu-drab-95.vercel.app/",
       tags: ["JavaScript", "LocalStorage", "UI/UX"],
     },
   ];
@@ -58,7 +58,7 @@ const Projects = () => {
               
               <CardHeader>
                 <CardTitle className="text-xl">{project.title}</CardTitle>
-                <CardDescription className="text-muted-foreground">
+                <CardDescription className="text-muted-foreground mb-4 px-4 text-white-500">
                   {project.description}
                 </CardDescription>
               </CardHeader>
