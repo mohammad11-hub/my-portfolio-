@@ -7,7 +7,7 @@ const Projects = () => {
     {
       title: "Stone Paper Scissor Game",
       description: "An interactive game built with JavaScript featuring smooth animations and responsive design.",
-      image: "https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=800&auto=format&fit=crop&q=60",
+      image: "https://stone-paper-secissor.vercel.app/",
       github: "https://github.com/mohammad11-hub/stonePaperSecissor.git",
       tags: ["JavaScript", "HTML", "CSS"],
     },
