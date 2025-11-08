@@ -25,6 +25,14 @@ const Projects = () => {
       github: "https://todoapp-nu-drab-95.vercel.app/",
       tags: ["JavaScript", "LocalStorage", "UI/UX"],
     },
+     {
+          title: "VizTalk Chart Application",
+          description: "A futuristic 3D-style chat interface built with React.js and SQLite backend.",
+          image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
+          live: "https://charts-applications.vercel.app/auth",
+          github: "https://charts-applications.vercel.app/",
+          tags: ["JavaScript", "LocalStorage", "UI/UX"],
+     }
   ];
 
   return (
