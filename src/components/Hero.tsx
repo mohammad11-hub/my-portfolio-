@@ -62,7 +62,7 @@ const Hero = () => {
             <Button
               size="lg"
               variant="outline"
-              onClick={() => window.open("https://drive.google.com/file/d/1qiiYX-MMrbcTZ5zDithXe_kkQuXA1y5X/view?usp=sharing", "_blank")}
+              onClick={() => window.open("https://drive.google.com/file/d/1npoLMH0vl1vngfd03jvZWijxLrIU1jnA/view?usp=drivesdk", "_blank")}
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground shadow-lg hover:shadow-xl transition-all"
             >
               <FileText className="mr-2 h-5 w-5" />
