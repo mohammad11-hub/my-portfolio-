@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Github, FileText } from "lucide-react";
-import profileImage from "@/assets/PNG.png";
-import heroBg from "@/assets/hero-bg.jpg";
+import profileImage from "@/assets/63a784f9-7248-4078-9150-e9467a5ec7a4.png";
+import heroBg from "@/assets/095ac547-33d8-4bce-af79-c82b180024c2.png";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
