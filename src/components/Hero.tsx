@@ -41,13 +41,33 @@ const Hero = () => {
             Mohammad Husain
           </h1>
           
-          <p className="text-2xl md:text-3xl text-muted-foreground mb-8">
-            I am a <span className="text-primary font-semibold">Web Developer</span>
-          </p>
+       
+import { TypeAnimation } from "react-type-animation";
+
+<p className="text-2xl md:text-3xl text-muted-foreground mb-8">
+  I am a{" "}
+  <span className="text-primary font-semibold">
+    <TypeAnimation
+      sequence={[
+        "Full Stack Developer",
+        2000,
+        "Frontend Developer",
+        2000,
+        "React Developer",
+        2000,
+        "Web Developer",
+        2000,
+      ]}
+      wrapper="span"
+      speed={50}
+      repeat={Infinity}
+    />
+  </span>
+</p>
+
 
           <p className="max-w-2xl text-lg text-muted-foreground mb-12">
-            BCA student specializing in web development with expertise in HTML, CSS, JavaScript, PHP, and Bootstrap. 
-            Passionate about creating beautiful and functional web applications.
+          I am a BCA graduate from HNGU with a strong foundation in Full Stack Development. I have hands-on experience with HTML, CSS, JavaScript, React.js, Node.js, Express.js, PHP, and MySQL. I have worked on responsive web applications, database management, and real-world projects, along with basic knowledge of Python, Excel, and ZPL for barcode and label designing. I am a quick learner, dedicated problem solver, and team player who is passionate about building efficient, user-friendly applications and continuously improving my technical skills.
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center">
