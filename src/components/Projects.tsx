@@ -2,103 +2,126 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 
+type Project = {
+  title: string;
+  description: string;
+  image: string;
+  live?: string;
+  github: string;
+  tags: string[];
+};
+
+const projects: Project[] = [
+  {
+    title: "Stone Paper Scissor Game",
+    description: "Interactive game built with JavaScript featuring responsive design and smooth gameplay.",
+    image: "https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=800&auto=format&fit=crop&q=60",
+    github: "https://stone-paper-secissor.vercel.app/",
+    tags: ["JavaScript", "HTML", "CSS"],
+  },
+  {
+    title: "Simon Says Game",
+    description: "Memory challenge game where players repeat increasingly complex visual patterns.",
+    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop&q=60",
+    github: "https://simon-says-game-one-gold.vercel.app/",
+    tags: ["JavaScript", "Game Logic", "DOM"],
+  },
+  {
+    title: "Todo Application",
+    description: "Task manager with add, edit, and delete workflows focused on practical productivity.",
+    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&auto=format&fit=crop&q=60",
+    github: "https://todoapp-nu-drab-95.vercel.app/",
+    tags: ["JavaScript", "LocalStorage", "UI/UX"],
+  },
+  {
+    title: "VizTalk Chart Application",
+    description: "Futuristic chat-style interface project built with React and SQLite-backed data flows.",
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
+    live: "https://charts-applications.vercel.app/auth",
+    github: "https://charts-applications.vercel.app/",
+    tags: ["React", "SQLite", "UI"],
+  },
+  {
+    title: "SCAN & PAY",
+    description:
+      "Restaurant billing POS with item selection, auto bill calculation, barcode scanning, QR support, and bill history.",
+    image:
+      "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=800&q=80",
+    live: "https://scan-pay-eight.vercel.app/",
+    github: "https://scan-pay-eight.vercel.app/",
+    tags: ["React", "Billing", "POS"],
+  },
+];
+
 const Projects = () => {
-  const projects = [
-    {
-      title: "Stone Paper Scissor Game",
-      description: "An interactive game built with JavaScript featuring smooth animations and responsive design.",
-      image: "https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=800&auto=format&fit=crop&q=60",
-      github: "https://stone-paper-secissor.vercel.app/",
-      tags: ["JavaScript", "HTML", "CSS"],
-    },
-    {
-      title: "Simon Says Game",
-      description: "A memory game that challenges players to remember and repeat increasingly complex patterns.",
-      image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop&q=60",
-      github: "https://simon-says-game-one-gold.vercel.app/",
-      tags: ["JavaScript", "Game Logic", "DOM"],
-    },
-    {
-      title: "Todo Application",
-      description: "A practical task management app with features to add, edit, and delete tasks efficiently.",
-      image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&auto=format&fit=crop&q=60",
-      github: "https://todoapp-nu-drab-95.vercel.app/",
-      tags: ["JavaScript", "LocalStorage", "UI/UX"],
-    },
-     {
-          title: "VizTalk Chart Application",
-          description: "A futuristic 3D-style chat interface built with React.js and SQLite backend.",
-          image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
-          live: "https://charts-applications.vercel.app/auth",
-          github: "https://charts-applications.vercel.app/",
-          tags: ["JavaScript", "LocalStorage", "UI/UX"],
-     },
-    {
-          title: "SCAN & PAY",
-          description: "in one line Furat Dhaba Smart Billing POS is a user-friendly billing application featuring quick food item selection, automatic bill calculation, barcode scanning, customer management, QR code generation, and bill history for fast and efficient restaurant billing.",
-          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlRFq2rllpWd2NxStwF3bBWtPEMbuw9BcefWgMMB3ClQ&s=10",
-          live: "https://scan-pay-eight.vercel.app/",
-          github: "https://scan-pay-eight.vercel.app/",
-          tags: ["react.js", "LocalStorage", "UI/UX"],
-     }
-  ];
-
   return (
-    <section id="projects" className="py-20 bg-card">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Frontend Mini <span className="text-primary">Projects</span>
+    <section id="projects" className="section-shell scroll-mt-24">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6">
+        <header className="section-heading">
+          <h2>
+            Featured <span className="gradient-text">Projects</span>
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Explore some of my recent web development projects
-          </p>
-        </div>
+          <p>A selection of practical projects highlighting frontend development and product-focused implementation.</p>
+        </header>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {projects.map((project, index) => (
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {projects.map((project) => (
             <Card
               key={project.title}
-              className="bg-secondary/50 border-primary/20 hover:border-primary/40 overflow-hidden group hover:shadow-xl transition-all animate-scale-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="group overflow-hidden border-border/80 bg-card/70 transition hover:-translate-y-1 hover:border-primary/45 hover:shadow-2xl"
             >
-              <div className="relative overflow-hidden">
+              <div className="relative h-48 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-60"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
               </div>
-              
+
               <CardHeader>
-                <CardTitle className="text-xl">{project.title}</CardTitle>
-                <CardDescription className="text-muted-foreground mb-4 px-4 text-white-500">
+                <CardTitle className="text-lg">{project.title}</CardTitle>
+                <CardDescription className="text-sm leading-relaxed text-muted-foreground">
                   {project.description}
                 </CardDescription>
               </CardHeader>
-              
-              <CardContent>
-                <div className="flex flex-wrap gap-2 mb-4">
+
+              <CardContent className="space-y-4">
+                <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full border border-primary/20"
+                      className="rounded-full border border-border/70 bg-secondary/40 px-2.5 py-1 text-[11px] font-medium uppercase tracking-wide text-muted-foreground"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-                
-                <Button
-                  variant="outline"
-                  className="w-full border-primary/30 hover:bg-primary hover:text-primary-foreground"
-                  onClick={() => window.open(project.github, "_blank")}
-                >
-                  <Github className="mr-2 h-4 w-4" />
-                  View on GitHub
-                </Button>
+
+                <div className="grid gap-2 sm:grid-cols-2">
+                  <Button asChild variant="outline" size="sm" className="w-full">
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title} source`}>
+                      <Github className="h-4 w-4" />
+                      Source
+                    </a>
+                  </Button>
+
+                  {project.live ? (
+                    <Button asChild size="sm" className="w-full">
+                      <a href={project.live} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title} live demo`}>
+                        <ExternalLink className="h-4 w-4" />
+                        Live
+                      </a>
+                    </Button>
+                  ) : (
+                    <Button asChild size="sm" className="w-full">
+                      <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title} project`}>
+                        <ExternalLink className="h-4 w-4" />
+                        Open
+                      </a>
+                    </Button>
+                  )}
+                </div>
               </CardContent>
             </Card>
           ))}

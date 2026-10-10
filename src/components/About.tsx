@@ -1,63 +1,62 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Code2, Database, Layout } from "lucide-react";
 
+const highlights = [
+  {
+    icon: Code2,
+    title: "Frontend Development",
+    description: "Building responsive interfaces with modern React patterns and clean component architecture.",
+  },
+  {
+    icon: Database,
+    title: "Backend Integration",
+    description: "Connecting APIs and data layers to deliver practical, business-focused web solutions.",
+  },
+  {
+    icon: Layout,
+    title: "UI Systems",
+    description: "Designing polished, accessible layouts with attention to spacing, hierarchy, and readability.",
+  },
+];
+
 const About = () => {
-  const highlights = [
-    {
-      icon: Code2,
-      title: "Frontend Development",
-      description: "Building responsive and interactive user interfaces with modern web technologies",
-    },
-    {
-      icon: Database,
-      title: "Backend Integration",
-      description: "Working with PHP and databases to create dynamic web applications",
-    },
-    {
-      icon: Layout,
-      title: "UI/UX Design",
-      description: "Creating beautiful and intuitive designs with Bootstrap and CSS",
-    },
-  ];
-
   return (
-    <section id="about" className="py-20 bg-card">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            About <span className="text-primary">Me</span>
+    <section id="about" className="section-shell scroll-mt-24">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6">
+        <header className="section-heading">
+          <h2>
+            About <span className="gradient-text">Me</span>
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
-        </div>
+          <p>
+            I’m a BCA graduate from HNGU with hands-on experience in frontend and backend development, database
+            workflows, and project delivery for real-world requirements.
+          </p>
+        </header>
 
-        <div className="max-w-4xl mx-auto">
-          <Card className="bg-secondary/50 border-primary/20 shadow-xl animate-scale-in">
-            <CardContent className="p-8">
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                Hello, I'm Mohammad Husain, a BCA student at Maktabah Jafariyah. I specialize in HTML, CSS, 
-                JavaScript, PHP, basic Python, and Bootstrap 5 to streamline project workflows and enhance team 
-                collaboration. I'm continuously advancing my backend expertise while preparing to expand into 
-                full-stack development. Additionally, I have skills in Advanced Excel and creating dynamic dashboards.
-              </p>
+        <Card className="glass-card">
+          <CardContent className="space-y-8 p-6 sm:p-8">
+            <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+              I work with HTML, CSS, JavaScript, React.js, Node.js, Express.js, PHP, and MySQL to build practical web
+              applications. I enjoy solving problems, collaborating with teams, and improving both code quality and
+              user experience through iterative development.
+            </p>
 
-              <div className="grid md:grid-cols-3 gap-6">
-                {highlights.map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col items-center text-center p-6 rounded-lg bg-card/50 hover:bg-card transition-all hover:shadow-lg group animate-fade-in"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                      <item.icon className="w-8 h-8 text-primary" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground">{item.description}</p>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {highlights.map((item) => (
+                <article
+                  key={item.title}
+                  className="rounded-2xl border border-border/70 bg-secondary/30 p-5 transition hover:border-primary/40 hover:bg-secondary/50"
+                >
+                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-primary/15">
+                    <item.icon className="h-5 w-5 text-primary" />
                   </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+                  <h3 className="text-base font-semibold sm:text-lg">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+                </article>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );

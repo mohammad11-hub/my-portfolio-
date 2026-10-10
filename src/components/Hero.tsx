@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Github, FileText } from "lucide-react";
+import { ArrowDown, FileText, Github } from "lucide-react";
 import profileImage from "@/assets/63a784f9-7248-4078-9150-e9467a5ec7a4.png";
 import heroBg from "@/assets/095ac547-33d8-4bce-af79-c82b180024c2.png";
 
@@ -14,101 +14,81 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative flex min-h-screen scroll-mt-24 items-center overflow-hidden px-4 pb-14 pt-32 sm:px-6 lg:px-8"
       style={{
-        backgroundImage: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.85)), url(${heroBg}),
-        backgroundSize: "cover",
+        backgroundImage: `linear-gradient(120deg, hsl(228 31% 10% / 0.92), hsl(228 31% 10% / 0.72)), url(${heroBg})`,
         backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-
-        backgroundAttachment: "fixed",
+        backgroundSize: "cover",
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent" />
-      
-      <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="flex flex-col items-center text-center animate-fade-in">
-          <div className="relative mb-8 group">
-            <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl group-hover:bg-primary/30 transition-all duration-500 animate-glow" />
-            <img
-              src={profileImage}
-              alt="Mohammad Husain"
-              className="relative w-48 h-48 rounded-full object-cover border-4 border-primary shadow-2xl"
-            />
-          </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-background" aria-hidden="true" />
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
-            Mohammad Husain
-          </h1>
-          
-       
-import { TypeAnimation } from "react-type-animation";
-
-<p className="text-2xl md:text-3xl text-muted-foreground mb-8">
-  I am a{" "}
-  <span className="text-primary font-semibold">
-    <TypeAnimation
-      sequence={[
-        "Full Stack Developer",
-        2000,
-        "Frontend Developer",
-        2000,
-        "React Developer",
-        2000,
-        "Web Developer",
-        2000,
-      ]}
-      wrapper="span"
-      speed={50}
-      repeat={Infinity}
-    />
-  </span>
-</p>
-
-
-          <p className="max-w-2xl text-lg text-muted-foreground mb-12">
-          I am a BCA graduate from HNGU with a strong foundation in Full Stack Development. I have hands-on experience with HTML, CSS, JavaScript, React.js, Node.js, Express.js, PHP, and MySQL. I have worked on responsive web applications, database management, and real-world projects, along with basic knowledge of Python, Excel, and ZPL for barcode and label designing. I am a quick learner, dedicated problem solver, and team player who is passionate about building efficient, user-friendly applications and continuously improving my technical skills.
+      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 lg:grid-cols-[1fr_auto] lg:gap-16">
+        <div className="space-y-6 text-center lg:text-left">
+          <p className="inline-flex rounded-full border border-primary/30 bg-primary/10 px-4 py-1 text-xs font-medium uppercase tracking-[0.16em] text-primary sm:text-sm">
+            Full Stack Developer
           </p>
 
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Button
-              size="lg"
-              onClick={() => window.open("https://github.com/mohammad11-hub?tab=repositories", "_blank")}
-              className="bg-primary hover:bg-primary-glow text-primary-foreground shadow-lg hover:shadow-xl transition-all"
-            >
-              <Github className="mr-2 h-5 w-5" />
-              My Work
+          <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
+            Hi, I’m <span className="gradient-text">Mohammad Husain</span>
+          </h1>
+
+          <p className="mx-auto max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base lg:mx-0 lg:text-lg">
+            I build responsive, user-focused web applications using React, JavaScript, PHP, Node.js, and SQL while
+            continuously sharpening my full-stack skills through practical projects.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
+            <Button asChild size="lg">
+              <a href="https://github.com/mohammad11-hub?tab=repositories" target="_blank" rel="noopener noreferrer">
+                <Github className="h-4 w-4" />
+                View GitHub
+              </a>
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => window.open("https://drive.google.com/file/d/1npoLMH0vl1vngfd03jvZWijxLrIU1jnA/view?usp=drivesdk", "_blank")}
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground shadow-lg hover:shadow-xl transition-all"
-            >
-              <FileText className="mr-2 h-5 w-5" />
-              Resume
+
+            <Button asChild size="lg" variant="outline">
+              <a
+                href="https://drive.google.com/file/d/1npoLMH0vl1vngfd03jvZWijxLrIU1jnA/view?usp=drivesdk"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FileText className="h-4 w-4" />
+                View Resume
+              </a>
             </Button>
           </div>
 
-          <button
-            onClick={() => scrollToSection("about")}
-            className="mt-16 animate-bounce"
-            aria-label="Scroll down"
-          >
-            <svg
-              className="w-6 h-6 text-primary"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
-          </button>
+          <div className="flex flex-wrap justify-center gap-3 text-xs text-muted-foreground sm:text-sm lg:justify-start">
+            <span className="rounded-full border border-border/80 bg-secondary/30 px-3 py-1">React & TypeScript</span>
+            <span className="rounded-full border border-border/80 bg-secondary/30 px-3 py-1">Backend Integration</span>
+            <span className="rounded-full border border-border/80 bg-secondary/30 px-3 py-1">Responsive UI</span>
+          </div>
+        </div>
+
+        <div className="mx-auto w-fit">
+          <div className="relative rounded-[2rem] border border-border/70 bg-card/60 p-3 shadow-2xl shadow-black/30 backdrop-blur">
+            <img
+              src={profileImage}
+              alt="Portrait of Mohammad Husain"
+              className="h-60 w-60 rounded-[1.4rem] object-cover object-top sm:h-72 sm:w-72"
+            />
+            <div
+              className="pointer-events-none absolute -bottom-4 left-1/2 h-10 w-10 -translate-x-1/2 rounded-full bg-primary/20 blur-xl"
+              aria-hidden="true"
+            />
+          </div>
         </div>
       </div>
+
+      <button
+        type="button"
+        onClick={() => scrollToSection("about")}
+        className="absolute bottom-5 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full border border-border/70 bg-background/75 px-4 py-2 text-xs font-medium text-muted-foreground transition hover:border-primary/60 hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary"
+        aria-label="Scroll to about section"
+      >
+        Scroll
+        <ArrowDown className="h-4 w-4" />
+      </button>
     </section>
   );
 };
