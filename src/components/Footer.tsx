@@ -1,43 +1,46 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 
+const socialLinks = [
+  {
+    href: "https://github.com/mohammad11-hub",
+    label: "GitHub profile",
+    icon: Github,
+  },
+  {
+    href: "https://www.linkedin.com/in/mohammadhusain-sunasara",
+    label: "LinkedIn profile",
+    icon: Linkedin,
+  },
+  {
+    href: "mailto:mrmdsunasara@gmail.com",
+    label: "Send an email",
+    icon: Mail,
+  },
+];
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-card border-t border-border py-8">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-muted-foreground text-center md:text-left">
-            © {currentYear} Mohammad Husain. All rights reserved.
-          </p>
-          
-          <div className="flex items-center gap-4">
+    <footer className="border-t border-border/80 bg-secondary/25 px-4 py-8 sm:px-6">
+      <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row">
+        <p className="text-center text-sm text-muted-foreground sm:text-left">
+          © {currentYear} Mohammad Husain. Crafted with React and Tailwind CSS.
+        </p>
+
+        <div className="flex items-center gap-2">
+          {socialLinks.map((item) => (
             <a
-              href="https://github.com/mohammad11-hub"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-all hover:scale-110"
-              aria-label="GitHub"
+              key={item.label}
+              href={item.href}
+              target={item.href.startsWith("http") ? "_blank" : undefined}
+              rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/70 bg-secondary/30 text-muted-foreground transition hover:border-primary/60 hover:text-primary"
+              aria-label={item.label}
             >
-              <Github className="w-5 h-5 text-primary" />
+              <item.icon className="h-4 w-4" />
             </a>
-            <a
-              href="https://www.linkedin.com/in/mohammadhusain-sunasara"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-all hover:scale-110"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="w-5 h-5 text-primary" />
-            </a>
-            <a
-              href="mailto:mmdsunasara@gmail.com"
-              className="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-all hover:scale-110"
-              aria-label="Email"
-            >
-              <Mail className="w-5 h-5 text-primary" />
-            </a>
-          </div>
+          ))}
         </div>
       </div>
     </footer>

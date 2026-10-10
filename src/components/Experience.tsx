@@ -3,54 +3,55 @@ import { Briefcase, Calendar } from "lucide-react";
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Work <span className="text-primary">Experience</span>
+    <section id="experience" className="section-shell scroll-mt-24">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6">
+        <header className="section-heading">
+          <h2>
+            Work <span className="gradient-text">Experience</span>
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
-        </div>
+        </header>
 
-        <div className="max-w-3xl mx-auto">
-          <Card className="bg-card border-primary/20 hover:border-primary/40 transition-all hover:shadow-xl animate-scale-in">
-            <CardContent className="p-8">
-              <div className="flex items-start gap-4">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Briefcase className="w-8 h-8 text-primary" />
-                </div>
-                
-                <div className="flex-1">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                    <h3 className="text-2xl font-bold">Freelancer</h3>
-                    <div className="flex items-center text-muted-foreground">
-                      <Calendar className="w-4 h-4 mr-2" />
-                      <span>Ongoing in 2025</span>
-                    </div>
-                  </div>
-                  
-                  <p className="text-muted-foreground leading-relaxed">
-                    Working on various freelance projects, applying skills in web development and data management. 
-                    Collaborating with clients to deliver custom solutions that meet their business needs. 
-                    Continuously learning and adapting to new technologies and best practices in the industry.
-                  </p>
-                  
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full border border-primary/20">
-                      Web Development
-                    </span>
-                    <span className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full border border-primary/20">
-                      Client Management
-                    </span>
-                    <span className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full border border-primary/20">
-                      Project Delivery
-                    </span>
-                  </div>
-                </div>
+        <Card className="glass-card mx-auto max-w-4xl border-border/80">
+          <CardContent className="p-6 sm:p-8">
+            <article className="grid gap-6 sm:grid-cols-[auto_1fr] sm:items-start">
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/15">
+                <Briefcase className="h-7 w-7 text-primary" />
               </div>
-            </CardContent>
-          </Card>
-        </div>
+
+              <div className="space-y-4">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <h3 className="text-xl font-semibold sm:text-2xl">Freelancer</h3>
+                  <p className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-secondary/40 px-3 py-1 text-xs text-muted-foreground sm:text-sm">
+                    <Calendar className="h-4 w-4" />
+                    Ongoing since 2025
+                  </p>
+                </div>
+
+                <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                  Building web solutions for diverse client requirements, from responsive interfaces to tailored business
+                  workflows. I focus on clear communication, dependable delivery, and continuous learning across modern
+                  development practices.
+                </p>
+
+                <ul className="flex flex-wrap gap-2">
+                  {[
+                    "Web Development",
+                    "Client Collaboration",
+                    "Custom Solutions",
+                    "Project Delivery",
+                  ].map((item) => (
+                    <li
+                      key={item}
+                      className="rounded-full border border-border/70 bg-secondary/40 px-3 py-1 text-xs font-medium text-muted-foreground sm:text-sm"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );
