@@ -32,6 +32,14 @@ const Projects = () => {
           live: "https://charts-applications.vercel.app/auth",
           github: "https://charts-applications.vercel.app/",
           tags: ["JavaScript", "LocalStorage", "UI/UX"],
+     },
+    {
+          title: "SCAN & PAY",
+          description: "in one line Furat Dhaba Smart Billing POS is a user-friendly billing application featuring quick food item selection, automatic bill calculation, barcode scanning, customer management, QR code generation, and bill history for fast and efficient restaurant billing.",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlRFq2rllpWd2NxStwF3bBWtPEMbuw9BcefWgMMB3ClQ&s=10",
+          live: "https://scan-pay-eight.vercel.app/",
+          github: "https://scan-pay-eight.vercel.app/",
+          tags: ["react.js", "LocalStorage", "UI/UX"],
      }
   ];
 
