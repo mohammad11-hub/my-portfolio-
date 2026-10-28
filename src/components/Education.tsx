@@ -29,13 +29,11 @@ const Education = () => {
                   </div>
                   
                   <div className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-lg border border-primary/20 mb-4">
-                    Currently Pursuing
+                    SGPA:- 8.09
                   </div>
                   
                   <p className="text-muted-foreground leading-relaxed">
-                    Pursuing a comprehensive degree in Computer Applications with a focus on programming, 
-                    web development, and software engineering. Gaining hands-on experience in various 
-                    technologies and frameworks while building a strong foundation in computer science fundamentals.
+                Completed a Bachelor's degree in Computer Completed a Bachelor's degree in Computer Applications (BCA) and currently pursuing a Master's degree in Computer Applications (MCA), with a focus on programming, web development, and software engineering. Continuously enhancing technical skills through hands-on projects and practical experience while strengthening knowledge of computer science fundamentals. (BCA) and currently pursuing a Master's degree in Computer Science (MCS), with a focus on programming, web development, and software engineering. Continuously enhancing technical skills through hands-on projects and practical experience while strengthening knowledge of computer science fundamentals.
                   </p>
                 </div>
               </div>
